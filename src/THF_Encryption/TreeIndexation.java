@@ -4,6 +4,10 @@ import java.util.Arrays;
 
 public class TreeIndexation {
 
+
+
+
+
     /**
      * Generates an array of length (2 ^ (n + 1)) - 1, used for indexing byte characters.
      * @param n the input parameter for generating the array
@@ -36,6 +40,12 @@ public class TreeIndexation {
 
         return A;
     }
+
+
+
+
+
+
     /**
      * Sums up the given array and returns the result as a long.
      * @param A the array to sum
@@ -48,6 +58,11 @@ public class TreeIndexation {
         }
         return s;
     }
+
+
+
+
+
     /**
      * Generates a sequence based on (2^n - 1, 2) to check the sum.
      * @param n the input parameter for generating the sequence

@@ -1,6 +1,11 @@
 package THF_Encryption;
 
 public class FlexHash {
+
+
+
+
+
     /**
      * @Variable [Preset of special primes]
      * @Variable [Size Limitation]
@@ -9,6 +14,10 @@ public class FlexHash {
     private static int Size = 4046; // Size limit of hash
     private static long[] Hex = new long[Size];
     private static final long[] Hash = new long[Size * 2];
+
+
+
+
 
     /**
      * Generator of the hash value, uses statistical calculations and arithmetic hashing.
@@ -39,6 +48,11 @@ public class FlexHash {
         return D;
     }
 
+
+
+
+
+
     /**
      * Prepares the hash array for the Generator, by the given hash
      */
@@ -60,6 +74,11 @@ public class FlexHash {
         }
         return Generator(Hash,hash_size);
     }
+
+
+
+
+
     /**
      * Flexible hashing, with error detections
      * @param input data to hash
