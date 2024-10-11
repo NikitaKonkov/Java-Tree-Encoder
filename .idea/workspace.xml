@@ -1,32 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3c28280-2f5d-4cf0-abde-d79d79dadd10" name="Changes" comment="" />
+    <list default="true" id="b3c28280-2f5d-4cf0-abde-d79d79dadd10" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/FlexHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/FlexHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/TreeIndexation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/TreeIndexation.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Symbitron"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Symbitron/THF_Encryption.git",
+    "accountId": "13612670-07d9-4af0-8198-4432368d7753"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 5
 }]]></component>
   <component name="ProjectId" id="2nHAVPuTJYM9Q5I8LmlhSfrPOF7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.FlexHash.executor": "Run",
+    "Application.Hash.executor": "Run",
+    "Application.StringEncoder.executor": "Run",
+    "Application.StringEncoder2.executor": "Run",
+    "Application.TreeIndexation.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nikit/IdeaProjects/My Encryption Concepts/Tree_Substitution",
     "onboarding.tips.debug.path": "C:/Users/nikit/IdeaProjects/My Encryption Concepts/src/Main.java"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nikit\IdeaProjects\My Encryption Concepts\Tree_Substitution" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nikit\IdeaProjects\My Encryption Concepts" />
+      <recent name="C:\Users\nikit\IdeaProjects\My Encryption Concepts\src" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.StringEncoder2">
+    <configuration name="FlexHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.FlexHash" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="THF_Encryption.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringEncoder" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.StringEncoder" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="THF_Encryption.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringEncoder2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.StringEncoder2" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="THF_Encryption.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TreeIndexation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.TreeIndexation" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="THF_Encryption.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.StringEncoder2" />
+        <item itemvalue="Application.StringEncoder" />
+        <item itemvalue="Application.TreeIndexation" />
+        <item itemvalue="Application.FlexHash" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
