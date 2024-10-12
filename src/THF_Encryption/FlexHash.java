@@ -1,105 +1,81 @@
 package THF_Encryption;
-
 public class FlexHash {
 
 
 
-
-
     /**
-     * @Variable [Preset of special primes]
-     * @Variable [Size Limitation]
-     * @Variable [Output Array]*/
-    private static int[] Primes =  {53,97,193,389,769,1543,3079,6151,12289,24593,49157,98317,196613,393241,786433,1572869};// 16 Primes
-    private static int Size = 4046; // Size limit of hash
-    private static long[] Hex = new long[Size];
-    private static final long[] Hash = new long[Size * 2];
-
-
-
-
-
-    /**
-     * Generator of the hash value, uses statistical calculations and arithmetic hashing.
-     *
-     * @param data long array
+     * Hash generator, uses statistical calculations and arithmetic hashing.
+     * @param input string to hash
      * @param size size of the hash
      * @return return the final hash
      */
-    private static byte[] Generator(long[] data, int size){
-        byte[] D = new byte[size];
-        long sum = 0, mean = 0, max = 0, min = data[0];
-        double devia = 0.0;
-        for (long e : data){ // sum, min, max
-            max = Math.max(max, e);
-            min = Math.min(min, e);
-            sum += e;
-        }
-        for (long e : data){ mean += (e >> 2);} // mean
-        mean = mean / Size;
-        for(long e : data) { devia += Math.pow(e - mean, 2);} //deviation
-        devia = (double) sum / (Size * 2);
-
-        for (int i = 0; i < Size; i++) { // build hash array
-            Hex[i] = (data[i] * mean * (min+1));
-            Hex[i] +=  (data[ Size - i - 1] + sum *  max ) * (min-1);
-            D[i] = (byte) Math.abs((Hex[ i ] / (devia + 1)) % 16);
-        }
-        return D;
-    }
-
-
-
-
-
-
-    /**
-     * Prepares the hash array for the Generator, by the given hash
-     */
-    private static byte[] Preparatory(byte[] input , int hash_size){
-        Size = hash_size;
-        int data = input.length;
-        byte[] ram = new byte[data];
-        for (int n = 0; n < data; n++){
-            ram[n] = (byte) input[n];
-        }
+    private static byte[] Generator(byte[] input , int size){
+        int[] P =  { // 16 Primes
+                0x35,0x61,0xC1,0x185,
+                0x301,0x607,0xC07,0x1807,
+                0x3001,0x6011,0xC005,0x1800D,
+                0x30005,0x60019,0xC0001,0x180005
+        };
+        long[] h = new long[size];
+        long[] H = new long[size * 2];
+        long K = 0,
+             L = 0,
+             M = 0,
+             N = 0;
+        double O = 0.0;
         int i = 0;
-        for (byte s: ram) {
-            data += Primes[ 15 - i % 16 ] * data + s;
+        int l = input.length;
+        byte[] out = new byte[l];
+        System.arraycopy(input, 0, out, 0, l);
+        for (byte s: out) {
+            l += P[0xF - i % 0x10] * l + s;
             i++;
         }
-        for(int n = 0; n < Size; n++){
-            data = (Primes[ n % 16 ] * data + n);
-            Hash[ n%256 ] = data + n;
+        for(int n = 0; n < size; n++){
+            l = (P[n % 0x10] * l + n);
+            H[n % 0x100] = l + n;
         }
-        return Generator(Hash,hash_size);
+        out = new byte[size];
+        for (long e : H){ // sum, min, max
+            M = Math.max(M, e);
+            N = Math.min(N, e);
+            K += e;
+        }
+        for (long e : H) L += (e >> 2); // mean
+        L = L / size;
+        for(long e : H) O += Math.pow(e - L, 2); //deviation
+        O = (double) K / (size * 2);
+        for (int n = 0; n < size; n++) { // build hash array
+            h[n] = (H[n] * L * (N + 1));
+            h[n] +=  (H[ size - n - 1] + K *  M ) * (N - 1);
+            out[n] = (byte) Math.abs((h[n] / (O + 1)) % 0x10);
+        }
+        return out;
     }
-
-
 
 
 
     /**
      * Flexible hashing, with error detections
      * @param input data to hash
-     * @param hash_size given size for the hash
+     * @param size given size for the hash
      * @return an int hash array
      * @throws IllegalArgumentException if the value is below limit.
      * @throws IllegalStateException if the generated hash corrupted.
      * */
-    public static byte[] Flex(byte[] input, int hash_size){
-        if (input.length < 2){ throw new IllegalArgumentException("The string is to short.");}
-        else if (hash_size <= 0) return new byte[ 0 ];
-        byte[] dub = Preparatory(input , hash_size);
+    public static byte[] Flex(byte[] input, int size) throws Exception {
+        if (input.length < 2){ throw new Exception("Flex: [The string is to short]");}
+        else if (size <= 0) return new byte[0];
+        byte[] out = Generator(input , size);
         int c = 0;
-        for (int n: Preparatory(input , hash_size)){
-            if (n != dub[c]) throw new IllegalStateException("Hash corruption!");
+        for (int n: Generator(input , size)){
+            if (n != out[c]) throw new Exception("Flex: [Hash corruption!]");
             c++;
         }
-        return dub;
+        return out;
     }
 
-    //public static void main(String[] args) {
-    //    for (int c : Flex(new byte[]{'a','c'},4)) System.out.print(Integer.toHexString(c));
-    //}
+    // public static void main(String[] args) {
+    //     for (int c : Flex(new byte[]{'a','c'},8)) System.out.print(Integer.toHexString(c));
+    // }
 }

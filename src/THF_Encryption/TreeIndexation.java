@@ -1,10 +1,5 @@
 package THF_Encryption;
-
-import java.util.Arrays;
-
 public class TreeIndexation {
-
-
 
 
 
@@ -44,8 +39,6 @@ public class TreeIndexation {
 
 
 
-
-
     /**
      * Sums up the given array and returns the result as a long.
      * @param A the array to sum
@@ -58,8 +51,6 @@ public class TreeIndexation {
         }
         return s;
     }
-
-
 
 
 

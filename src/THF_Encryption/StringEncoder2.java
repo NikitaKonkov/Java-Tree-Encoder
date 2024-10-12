@@ -1,21 +1,21 @@
 package THF_Encryption;
-
-
 public class StringEncoder2 {
 
 
-
-
-    private static byte[] Generator(String text){
-        return Extender(Disassembler(Fuser(text.getBytes(), Signer(text))));
+    /**
+     * Collection of instruments for the encryption algorithm.
+     * @algorithm
+     * {@code Generator, Fuser, Signer, Disassembler, Assembler, Extender}*/
+    private static byte[] Generator(String text) throws Exception {
+        return Assembler(Extender(Disassembler(Fuser(text.getBytes(), Signer(text)))));
     }
-    private static byte[] Fuser(byte[] a, byte[] b) {
-        byte[] r = new byte[a.length + b.length];
-        System.arraycopy(a, 0, r, 0, a.length);
-        System.arraycopy(b, 0, r, a.length, b.length);
-        return r;
+    private static byte[] Fuser(byte[] a, byte[] b) { // combines two byte arrays together
+        byte[] out = new byte[a.length + b.length];
+        System.arraycopy(a, 0, out, 0, a.length);
+        System.arraycopy(b, 0, out, a.length, b.length);
+        return out;
     }
-    private static byte[] Signer(String text){
+    private static byte[] Signer(String text){ // 4 byte string signature
         byte a = 1, b = 1,c = 1, d = 1;
         byte[] t = text.getBytes();
         for (byte val : t) {
@@ -26,7 +26,7 @@ public class StringEncoder2 {
         }
         return new byte[]{a,b,c,d,0};
     }
-    private static byte[] Disassembler(byte[] text) {
+    private static byte[] Disassembler(byte[] text) { // disassembles a byte array into nibbles
         int l = text.length * 2;
         byte[] out = new byte[l];
         for (int n = 0; n < text.length; n++) {
@@ -36,7 +36,7 @@ public class StringEncoder2 {
         }
         return out;
     }
-    private static byte[] Assembler(byte[] text) {
+    private static byte[] Assembler(byte[] text) { // assembles a nibble byte array into full bytes
         int l = text.length / 2;
         byte[] out = new byte[l];
         for (int n = 0; n < l; n++) {
@@ -46,7 +46,7 @@ public class StringEncoder2 {
         }
         return out;
     }
-    private static byte[] Extender(byte[] text){
+    private static byte[] Extender(byte[] text) throws Exception { // extends the string to a specific size
         byte[] b = Disassembler(text);
         int e = 1;
         while (e * 2 < b.length){
@@ -57,14 +57,12 @@ public class StringEncoder2 {
 
 
 
-
-
     /**
-     * This code defines a Cypher method that encrypts or decrypts a byte array by repeatedly applying array substitution based on the given parameter c.
+     * Defines a Cypher method that encrypts or decrypts a byte array by repeatedly applying array substitution based on the given parameter c.
      * @param text byte array
      * @param itr amount of iterations
      * @return cyphered text*/
-    public static byte[] Cypher(byte[] text, long itr) throws Exception {
+    private static byte[] Cypher(byte[] text, long itr) throws Exception {
         if (itr == 0) {
             return text;
         }
@@ -95,46 +93,35 @@ public class StringEncoder2 {
 
 
 
-
-
     /**
      * Filter analyzes the string, checks if all data is correct, than returns the filtered string.
      * @param input assembled byte array
-     * @return filtered string*/
-    private static String Filter(byte[] input) throws IllegalStateException {
-        byte a = 1, b = 1,c = 1, d = 1;
-        int count = 0;
+     * @return filtered string
+     * @throws IllegalStateException if the data cannot be verified
+     */
+    private static String Filter(byte[] input) throws Exception {
+        if (!(input.length+1 > 0 && (input.length+1 & (input.length)) == 0)) throw new Exception("Filter: [Data size not matching]");
+
+        byte A = 1, B = 1, C = 1, D = 1;
+        int c = 0;
+        System.out.println(input.length);
         StringBuilder out = new StringBuilder();
-        for (byte value : input) {
-            out.append((char) value);
-            a -= value;
-            b += value;
-            c ^= value;
-            d |= value;
-            if (input[count+1] == a &&
-                input[count+2] == b &&
-                input[count+3] == c &&
-                input[count+4] == d){count = -1;System.out.println("Filter: [OK]"); break;}
-            count++;
+        for (byte v : input) {
+            out.append((char) v);
+            A -= v;
+            B += v;
+            C ^= v;
+            D |= v;
+            if (input[c+1] == A &&
+                input[c+2] == B &&
+                input[c+3] == C &&
+                input[c+4] == D){System.out.println("Filter: [OK]"); break;}
+            else if(c > input.length-3) throw new Exception("Filter: [ERROR]");
+            c++;
         }
-        if (count != -1) throw new IllegalStateException("Filter: [Data Corrupted]");
         return out.toString();
     }
 
-
-
-
-
-    public static void main(String[] args) throws Exception {
-        String text = "AEIOU123400000214256352AEIOU123400000214256352AEIOU123400";
-
-        byte[] raw = Assembler(Cypher(Generator(text),111));
-        printa(raw);
-        raw = Assembler(Cypher(Disassembler(raw),-111));
-        printa(raw);
-        System.out.println(Filter(Assembler(Generator(text))));
-
-    }
     private static void printa(byte[] array){
         for (byte ch: array){
             System.out.print(ByteToHex(ch));
@@ -146,5 +133,20 @@ public class StringEncoder2 {
         int v = b & 0xFF; // Convert to unsigned
         return new String(new char[] { HEX_ARRAY[v >>> 4], HEX_ARRAY[v & 0x0F] });
     }
+
+    public static void main(String[] args) throws Exception {
+        String text = "abc123212321232123abc123212321232123abc123212321232123abc123212321232123abc123212321232123abc123212321232123abc123212321232123abc123212321232123";
+
+        byte[] raw = Generator(text);
+
+        printa(raw);
+
+        System.out.println(raw.length);
+
+        System.out.println(Filter(raw));
+
+
+    }
+
 
 }

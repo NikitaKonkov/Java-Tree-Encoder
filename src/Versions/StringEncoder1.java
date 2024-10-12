@@ -1,7 +1,10 @@
-package THF_Encryption;
+package Versions;
 
 
-public class StringEncoder {
+import THF_Encryption.FlexHash;
+import THF_Encryption.TreeIndexation;
+
+public class StringEncoder1 {
     static int size = 0;
     static int len = 0;
 
@@ -43,7 +46,7 @@ public class StringEncoder {
      * @param text for extending
      * @return extended text
      */
-     public static byte[] Extender(byte[] text) {
+     public static byte[] Extender(byte[] text) throws Exception {
          int s = 1;
          int n = 0;
          int l = text.length;
@@ -57,7 +60,7 @@ public class StringEncoder {
              text = Fuse(text, new byte[]{0}); //
              Extender(text);
          }
-         return Fuse(text,FlexHash.Flex(text,s-l));
+         return Fuse(text, FlexHash.Flex(text,s-l));
      }
 
     public static String unHex(byte[] arr){
@@ -68,7 +71,7 @@ public class StringEncoder {
         return out.toString();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         String text = "This is a test message and it is obfuscated by the THF encrypter.";
         byte[] res = Extender(Hex(text));
         System.out.println(unHex(res));
