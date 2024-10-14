@@ -1,7 +1,5 @@
-package THF_Encryption;
-public class TreeIndexation {
-
-
+package THF_Encryption.Cypher;
+public class T_Indexation {
 
     /**
      * Generates an array of length (2 ^ (n + 1)) - 1, used for indexing byte characters.
@@ -10,8 +8,8 @@ public class TreeIndexation {
      * @throws IllegalArgumentException if n is not between 1 and 28
      * @throws IllegalStateException if generated array is corrupted
      */
-    public static int[] TreeArray(int n) {
-        if (n < 1 || n > 28) throw new IllegalArgumentException("TreeIndexation: [Value must be between 1 & 28]");
+    public static int[] TreeArray(int n) throws Exception {
+        if (n < 1 || n > 28) throw new Exception("TreeIndexation: [Value must be between 1 & 28]");
 
         int N = (1 << (n + 1)) - 1; // Calculate the length of the array
         int[] A = new int[N];
@@ -31,13 +29,10 @@ public class TreeIndexation {
         }
 
         // Verify the sum of the array
-        if (A134057(n) != TreeSum(A)) throw new IllegalStateException("TreeIndexation: [Tree index corruption]");
+        if (A134057(n) != TreeSum(A)) throw new Exception("TreeIndexation: [Tree index corruption]");
 
         return A;
     }
-
-
-
 
     /**
      * Sums up the given array and returns the result as a long.
@@ -51,8 +46,6 @@ public class TreeIndexation {
         }
         return s;
     }
-
-
 
     /**
      * Generates a sequence based on (2^n - 1, 2) to check the sum.

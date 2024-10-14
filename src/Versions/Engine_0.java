@@ -1,23 +1,23 @@
 package Versions;
 
 
-import THF_Encryption.FlexHash;
-import THF_Encryption.TreeIndexation;
+import THF_Encryption.Hash.FlexHash;
+import THF_Encryption.Cypher.T_Indexation;
 
-public class StringEncoder1 {
+public class Engine_0 {
     static int size = 0;
     static int len = 0;
 
-    public static byte[] ArraySubstitution(byte[] text){
-        int[] ea = TreeIndexation.TreeArray(size-1);
+    public static byte[] ArraySubstitution(byte[] text) throws Exception {
+        int[] ea = T_Indexation.TreeArray(size-1);
         byte[] out = new byte[len];
         for (int n = 0; n < len; n++){
             out[ea[n]] = text[n];
         }
         return out;
     }
-    public static byte[] ArrayDeSubstitution(byte[] text){
-        int[] ea = TreeIndexation.TreeArray(size-1);
+    public static byte[] ArrayDeSubstitution(byte[] text) throws Exception {
+        int[] ea = T_Indexation.TreeArray(size-1);
         byte[] out = new byte[len];
         for (int n = 0; n < len; n++){
             out[n] = text[ea[n]];

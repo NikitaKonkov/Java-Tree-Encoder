@@ -1,4 +1,4 @@
-package THF_Encryption;
+package THF_Encryption.Hash;
 public class FlexHash {
 
 

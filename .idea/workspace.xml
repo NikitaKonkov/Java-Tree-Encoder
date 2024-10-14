@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3c28280-2f5d-4cf0-abde-d79d79dadd10" name="Changes" comment="another workaround">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="b3c28280-2f5d-4cf0-abde-d79d79dadd10" name="Changes" comment="another workaround, more error handling and overall some optimisation.">
+      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Crypter/A_Crypt.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Cypher/S_Cypher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Cypher/T_Cypher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/EncodingEngine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Instruments/Instruments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/FlexHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/FlexHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Versions/StringEncoder1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/TreeIndexation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/TreeIndexation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/FlexHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/Hash/FlexHash.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/TreeIndexation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/Cypher/T_Indexation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Versions/StringEncoder1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Versions/Engine_0.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,21 +32,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Symbitron"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Symbitron&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Symbitron/THF_Encryption.git",
-    "accountId": "13612670-07d9-4af0-8198-4432368d7753"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Symbitron/THF_Encryption.git&quot;,
+    &quot;accountId&quot;: &quot;13612670-07d9-4af0-8198-4432368d7753&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2nHAVPuTJYM9Q5I8LmlhSfrPOF7" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -53,6 +57,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.A_Crypt.executor": "Run",
+    "Application.EncoderEngine.executor": "Run",
+    "Application.EncodingEngine.executor": "Run",
+    "Application.EncryptionEngine.executor": "Run",
     "Application.FlexHash.executor": "Run",
     "Application.Hash.executor": "Run",
     "Application.StringEncoder.executor": "Run",
@@ -78,9 +86,48 @@
       <recent name="C:\Users\nikit\IdeaProjects\My Encryption Concepts\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.StringEncoder2">
+  <component name="RunManager" selected="Application.A_Crypt">
+    <configuration name="A_Crypt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.Crypter.A_Crypt" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="THF_Encryption.Crypter.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncodingEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.EncodingEngine" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="THF_Encryption.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EncryptionEngine" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.EncryptionEngine" />
+      <module name="My Encryption Concepts" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Versions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FlexHash" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="THF_Encryption.FlexHash" />
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.Hash.FlexHash" />
       <module name="My Encryption Concepts" />
       <extension name="coverage">
         <pattern>
@@ -105,38 +152,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringEncoder2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="THF_Encryption.StringEncoder2" />
-      <module name="My Encryption Concepts" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Versions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TreeIndexation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="THF_Encryption.TreeIndexation" />
-      <module name="My Encryption Concepts" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Versions.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.StringEncoder2" />
+        <item itemvalue="Application.A_Crypt" />
+        <item itemvalue="Application.EncodingEngine" />
+        <item itemvalue="Application.EncryptionEngine" />
         <item itemvalue="Application.FlexHash" />
         <item itemvalue="Application.StringEncoder1" />
-        <item itemvalue="Application.TreeIndexation" />
       </list>
     </recent_temporary>
   </component>
@@ -165,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728669821593</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="another workaround, more error handling and overall some optimisation.">
+      <option name="closed" value="true" />
+      <created>1728713067433</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1728713067433</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -183,7 +213,8 @@
     <MESSAGE value="Initial commit, but I was done with the second encoder before." />
     <MESSAGE value="StringEncoder2&#10;- better error correction&#10;- removes junk and check for validity of string." />
     <MESSAGE value="another workaround" />
-    <option name="LAST_COMMIT_MESSAGE" value="another workaround" />
+    <MESSAGE value="another workaround, more error handling and overall some optimisation." />
+    <option name="LAST_COMMIT_MESSAGE" value="another workaround, more error handling and overall some optimisation." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
