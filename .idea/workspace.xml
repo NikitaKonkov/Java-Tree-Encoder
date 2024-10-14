@@ -4,18 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b3c28280-2f5d-4cf0-abde-d79d79dadd10" name="Changes" comment="another workaround, more error handling and overall some optimisation.">
-      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Crypter/A_Crypt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Cypher/S_Cypher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Cypher/T_Cypher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/EncodingEngine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/THF_Encryption/Instruments/Instruments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="b3c28280-2f5d-4cf0-abde-d79d79dadd10" name="Changes" comment="even more stuff">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/FlexHash.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/Hash/FlexHash.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/StringEncoder2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/TreeIndexation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/Cypher/T_Indexation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Versions/StringEncoder1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Versions/Engine_0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/THF_Encryption/Crypter/A_Crypt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/THF_Encryption/Crypter/A_Crypt.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,13 +77,13 @@
       <recent name="C:\Users\nikit\IdeaProjects\My Encryption Concepts\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.A_Crypt">
-    <configuration name="A_Crypt" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="THF_Encryption.Crypter.A_Crypt" />
+  <component name="RunManager" selected="Application.A_Cipher">
+    <configuration name="A_Cipher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="THF_Encryption.Cipher.A_Cipher" />
       <module name="My Encryption Concepts" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="THF_Encryption.Crypter.*" />
+          <option name="PATTERN" value="THF_Encryption.Cipher.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -154,7 +145,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.A_Crypt" />
+        <item itemvalue="Application.A_Cipher" />
         <item itemvalue="Application.EncodingEngine" />
         <item itemvalue="Application.EncryptionEngine" />
         <item itemvalue="Application.FlexHash" />
@@ -195,7 +186,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728713067433</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="even more stuff">
+      <option name="closed" value="true" />
+      <created>1728919042049</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728919042049</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,7 +213,8 @@
     <MESSAGE value="StringEncoder2&#10;- better error correction&#10;- removes junk and check for validity of string." />
     <MESSAGE value="another workaround" />
     <MESSAGE value="another workaround, more error handling and overall some optimisation." />
-    <option name="LAST_COMMIT_MESSAGE" value="another workaround, more error handling and overall some optimisation." />
+    <MESSAGE value="even more stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="even more stuff" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,6 +1,6 @@
-package THF_Encryption.Cypher;
+package THF_Encryption.Cipher;
 
-public class S_Cypher {
+public class S_Cipher {
     public static byte[] ShuffleCypher(byte[] text, String key, boolean isForward) {
         int[] alphabet = new int[ text.length];
         for (int i = 0; i < text.length; i++) {

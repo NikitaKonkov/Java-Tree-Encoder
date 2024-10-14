@@ -1,4 +1,4 @@
-package THF_Encryption.Cypher;
+package THF_Encryption.Cipher;
 public class T_Indexation {
 
     /**

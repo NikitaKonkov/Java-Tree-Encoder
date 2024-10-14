@@ -1,8 +1,7 @@
 package THF_Encryption;
 
 
-import static THF_Encryption.Cypher.S_Cypher.ShuffleCypher;
-import static THF_Encryption.Cypher.T_Cypher.TreeCypher;
+import static THF_Encryption.Cipher.T_Cipher.TreeCypher;
 import static THF_Encryption.Instruments.Instruments.*;
 
 public class EncodingEngine {

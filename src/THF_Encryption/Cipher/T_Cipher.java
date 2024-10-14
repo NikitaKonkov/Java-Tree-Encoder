@@ -1,6 +1,6 @@
-package THF_Encryption.Cypher;
+package THF_Encryption.Cipher;
 
-public class T_Cypher {
+public class T_Cipher {
     /**
      * Defines a Cypher and Substitution method that encrypts or decrypts a byte array by repeatedly applying array substitution based on the given parameter c.
      * @param text byte array
